@@ -1,33 +1,25 @@
 # Deadlock Mod Repair
 
-A small, offline command-line tool for mod authors. Check a mod against your
-installed Deadlock build and export a **complete repaired VPK**, ready to test
-and distribute.
+Deadlock updates can leave an otherwise good skin crushed, stuck, or crashing in
+hero select. This tool takes the fixes we developed in
+[Deadlock Mod Manager](https://github.com/GabrielDieterly/deadlock-mod-manager/tree/feature/localization-merge-poc)
+and applies them to a copy of your mod, so you can test it and upload an update.
 
-The tool uses the compatibility rules developed and tested in
-[Deadlock Mod Manager](https://github.com/GabrielDieterly/deadlock-mod-manager/tree/feature/localization-merge-poc).
-It requires no manager installation, AI agent, Steam login, or network connection
-to repair a mod.
+## Using it
 
-## Download
+[Download the Windows or Linux version](https://github.com/GabrielDieterly/deadlock-mod-repair/releases)
+and extract it. You only need the executable, your mod VPK, and an up-to-date
+Deadlock installation.
 
-Download the Windows or Linux archive from
-[Releases](https://github.com/GabrielDieterly/deadlock-mod-repair/releases).
-Extract it and open a terminal in that folder. The ZIP/TAR contains the executable
-and license notices. You do not need Rust to use a release executable.
+Open a terminal in the extracted folder and run:
 
-## Repair a mod
-
-Update your local Deadlock installation first. Select your original mod VPK and
-choose a new output filename **outside the game installation**.
-
-Windows PowerShell:
+**Windows (PowerShell)**
 
 ```powershell
 .\deadlock-mod-repair.exe repair "C:\Mods\my_mod_dir.vpk" --game "C:\Program Files (x86)\Steam\steamapps\common\Deadlock" --output "C:\Mods\my_mod_fixed_dir.vpk"
 ```
 
-Linux:
+**Linux**
 
 ```sh
 ./deadlock-mod-repair repair ./my_mod_dir.vpk \
@@ -35,87 +27,55 @@ Linux:
   --output ./my_mod_fixed_dir.vpk
 ```
 
-This exports:
+Replace the paths with yours. Pick a new output filename outside the game folder.
+The tool won't overwrite your original or an existing output file.
 
-- `my_mod_fixed_dir.vpk`: the entire mod with verified repairs embedded.
-- `my_mod_fixed_dir.repair.json`: changed resources, warnings, input/output hashes,
-  installed game version, and the repair engine revision.
+You'll get a complete repaired VPK and a `.repair.json` report showing what
+changed and anything that still needs attention. The fixes are baked into that
+copy; players can install it normally without the manager's compatibility overlay.
 
-The original VPK stays unchanged. Existing output files are never overwritten.
-Install the exported VPK by itself and test the portrait preview, movement, and
-abilities in-game before publishing it. Do not enable the original and repaired
-copies together during testing.
+Test the repaired VPK on its own before uploading it. Check hero select, movement,
+and abilities, and keep your original files for future game updates.
 
-These repairs are permanent **in the exported copy**. They do not need a runtime
-overlay or the mod manager. A future game update can require another repair, so
-keep your original authoring files.
+To see what would change without exporting a VPK, use `check` instead of `repair`
+and leave off `--output`. Add `--report ./check.json` if you want to save the report.
 
-## Check without exporting
+## What can it fix?
 
-```sh
-./deadlock-mod-repair check ./my_mod_dir.vpk --game /path/to/Deadlock
-```
+- Outdated animation skeletons (`.vnmskel_c`), while keeping custom poses and mask
+  weights where the game and mod data show they can be preserved.
+- Missing camera metadata in compatible models, such as the camera freezing
+  during Calico's Cat ability.
+- Supported game-data changes, including old enum values that the game no longer accepts.
+- Mod names and text that need to be carried onto the current game's localization files.
 
-Add `--report ./check.json` to save the findings. `check` does not export a VPK.
-The game argument accepts the Deadlock installation, its `game` folder, or its
-`game/citadel` folder.
+It compares your mod with your installed game. The rules aren't tied to specific
+mods or authors. If a change can't be verified, the affected file stays as it was
+and the report explains why. Models and textures outside the repairs keep their
+original contents.
 
-For multipart VPKs, select the `_dir.vpk` and keep its `_000.vpk`, `_001.vpk`, etc.
-beside it. The export is one self-contained VPK.
+For a multipart mod, select the `_dir.vpk` and keep its numbered companion VPKs
+beside it. The export will be a single VPK. Archives with preload bytes aren't
+supported yet; the tool will stop and tell you rather than export incomplete files.
 
-## What it repairs
+## Building it
 
-- **Animation skeletons (`.vnmskel_c`):** update outdated sampled bone mappings
-  against the installed game. Where verified, preserve custom reference poses
-  and mask weights. "Sampling layout" means bone order, parent indices, reference
-  poses, and masks; it does not mean changing the animation clips.
-- **Camera interfaces (`.vmdl_c`):** restore missing camera metadata and points
-  when compatible rigs provide sufficient evidence, retaining custom geometry.
-- **Shared game data (`.vdata_c`):** rebuild supported tables against the current
-  game, preserving detected mod edits and applying verified enum migrations.
-- **Localization:** carry authored names and text onto the current game's table.
-
-Rules use resource structure and the installed game's corresponding resource,
-rather than author names, mod IDs, or a list of specific mods. Unknown skeleton
-differences remain unchanged and appear as warnings. Ambiguous localization
-snapshots, parse warnings, or conflicting changes leave the affected file
-unchanged. A successful export verifies the archive; it does not replace an
-in-game test or guarantee every possible mod issue is fixed.
-
-The output contains every original resource. The exporter reopens the packed
-VPK and verifies every payload against the staged copy. Resources outside the
-selected repairs keep their original payload bytes. Inputs with preloaded VPK
-entries are currently rejected rather than risking incomplete extraction.
-
-## Build from source
-
-Install stable Rust and a native C/C++ build toolchain. On Windows use the MSVC
-Rust target with Visual Studio C++ Build Tools. On Linux install GCC/G++.
+With stable Rust and a C/C++ build toolchain installed:
 
 ```sh
 cargo build --release --locked
 cargo test --locked
 ```
 
-The executable is in `target/release`. There are no Tauri, React, GTK, or WebView
-dependencies. GitHub Actions tests and builds Windows and Linux executables.
+The executable ends up in `target/release`. Windows builds need Visual Studio C++
+Build Tools; Linux builds need GCC/G++.
 
-## Maintaining the repair rules
-
-The engine, history fingerprints, VPK reader, and VPK writer are vendored from a
-fixed manager commit. [UPSTREAM.json](UPSTREAM.json) records each upstream source
-path and SHA-256 hash. [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) identifies
-the upstream projects and preserves their licenses.
-
-To refresh that snapshot from a checked-out manager repository:
+The repair code is copied from a specific manager commit, recorded in
+[UPSTREAM.json](UPSTREAM.json). To pull in newer rules from a local manager checkout:
 
 ```sh
 python scripts/sync-upstream.py /path/to/deadlock-mod-manager
 cargo test --locked
 ```
 
-Run the exporter tests and compare real repaired resources with the manager's
-verified output before releasing refreshed rules. Changes to the upstream
-engine's input/output API may require updates to `src/export.rs`.
-
-GPL-3.0. See [LICENSE.md](LICENSE.md).
+GPL-3.0. [License](LICENSE.md) · [Third-party credits](THIRD-PARTY-NOTICES.md)
