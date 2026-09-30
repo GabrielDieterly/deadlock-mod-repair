@@ -1,0 +1,401 @@
+{
+  "repository": "https://github.com/GabrielDieterly/deadlock-mod-manager",
+  "revision": "85d3e12c7505e6d1acfdabee7c6cd736cc158475",
+  "files": [
+    {
+      "source": "LICENSE.md",
+      "destination": "LICENSE.md",
+      "sha256": "f817886ee6bb65ed3098a7987b1e9781653d15c71f85589ce0d2af663c66d373"
+    },
+    {
+      "source": "apps/desktop/src-tauri/assets/localization-history.bin",
+      "destination": "assets/localization-history.bin",
+      "sha256": "d26b5918cf2c94d832e96b348ced2e6f16b470b4516411e8e9c56cd957e8417d"
+    },
+    {
+      "source": "apps/desktop/src-tauri/assets/vdata-history.bin",
+      "destination": "assets/vdata-history.bin",
+      "sha256": "52c796a55454c24886232ad629beb3a25cd39497393762be0451ed6ec94ade91"
+    },
+    {
+      "source": "apps/desktop/src-tauri/src/mod_manager/localization_overlay.rs",
+      "destination": "src/mod_manager/localization_overlay.rs",
+      "sha256": "1bbb7cfbbc4dd53dd19af78b0c5a5b5b25e8498103c8e6d6d27493e7da635866"
+    },
+    {
+      "source": "apps/desktop/src-tauri/src/mod_manager/localization_overlay/animation_masks.rs",
+      "destination": "src/mod_manager/localization_overlay/animation_masks.rs",
+      "sha256": "0d8d50b6d1355b708f5b7d39bfa941ec100661cfc00b7c1eda4f1e9254533220"
+    },
+    {
+      "source": "apps/desktop/src-tauri/src/mod_manager/localization_overlay/animation_model_evidence.rs",
+      "destination": "src/mod_manager/localization_overlay/animation_model_evidence.rs",
+      "sha256": "aaf6f71dc160ea8d0b1bc3941778b4dda70a14e177f98a2276826094162502fa"
+    },
+    {
+      "source": "apps/desktop/src-tauri/src/mod_manager/localization_overlay/animation_poses.rs",
+      "destination": "src/mod_manager/localization_overlay/animation_poses.rs",
+      "sha256": "268f0a61897543249f0036d0b8c49b31f0d1e06f998392c53db78d0d1acea70d"
+    },
+    {
+      "source": "apps/desktop/src-tauri/src/mod_manager/localization_overlay/animation_skeleton.rs",
+      "destination": "src/mod_manager/localization_overlay/animation_skeleton.rs",
+      "sha256": "a223ffb361d65956d14a171234e9b3a3359458afe0daf74f84049a8068c6bedc"
+    },
+    {
+      "source": "apps/desktop/src-tauri/src/mod_manager/localization_overlay/asset_compatibility.rs",
+      "destination": "src/mod_manager/localization_overlay/asset_compatibility.rs",
+      "sha256": "9b5fcd4863d4fb46759313846ead212e515da92fb175c46f455893e591dfe738"
+    },
+    {
+      "source": "apps/desktop/src-tauri/src/mod_manager/localization_overlay/enum_compatibility.rs",
+      "destination": "src/mod_manager/localization_overlay/enum_compatibility.rs",
+      "sha256": "0de9e205674fe9ebfba793d39c584cfe88f74704489d9ba85bf51314fbbaee93"
+    },
+    {
+      "source": "apps/desktop/src-tauri/src/mod_manager/localization_overlay/hero_rebase.rs",
+      "destination": "src/mod_manager/localization_overlay/hero_rebase.rs",
+      "sha256": "f576d63e42becb1605573349d1aa79ec7de646440e83c7190b3eb2949d389535"
+    },
+    {
+      "source": "apps/desktop/src-tauri/src/mod_manager/localization_overlay/model_camera.rs",
+      "destination": "src/mod_manager/localization_overlay/model_camera.rs",
+      "sha256": "15ff12939343e8981c297cd17422e6b64f73abd00ff98d25027ccf846be03e3e"
+    },
+    {
+      "source": "apps/desktop/src-tauri/src/mod_manager/vdata_history.rs",
+      "destination": "src/mod_manager/vdata_history.rs",
+      "sha256": "2d0404cbeeb29980f0b4f07fdc79064b0f95d6e270b09a7578401e7dad754671"
+    },
+    {
+      "source": "packages/source2-model/Cargo.toml",
+      "destination": "vendor/source2-model/Cargo.toml",
+      "sha256": "1cd21638be2220d629ade4da46fab816b7c3e51f8b65264a8b4fee3716f295d8"
+    },
+    {
+      "source": "packages/source2-model/LICENSE-ValveResourceFormat",
+      "destination": "vendor/source2-model/LICENSE-ValveResourceFormat",
+      "sha256": "acbc4ec49464b1c9779fcf1eada093eca712a8759a266e3c5e75806e9095d18c"
+    },
+    {
+      "source": "packages/source2-model/src/error.rs",
+      "destination": "vendor/source2-model/src/error.rs",
+      "sha256": "944446d20d7551a1f09a2e06eef9446dc760ea05037d7acaeae29299feeb8f33"
+    },
+    {
+      "source": "packages/source2-model/src/kv3.rs",
+      "destination": "vendor/source2-model/src/kv3.rs",
+      "sha256": "7cc9da97b51e1e3b796f601bfcf7474df2cfe05da9e4e6fa7590e1923b0a38b9"
+    },
+    {
+      "source": "packages/source2-model/src/kv3/decode.rs",
+      "destination": "vendor/source2-model/src/kv3/decode.rs",
+      "sha256": "61b3bcf63fcac560e1d65206ffb1bb4163879e0588dc8a4af7598262fea52d31"
+    },
+    {
+      "source": "packages/source2-model/src/kv3/segment.rs",
+      "destination": "vendor/source2-model/src/kv3/segment.rs",
+      "sha256": "aa91819e29881d3d1f830740f5f43a880c1a8423674c0f56a58385bcaadb3bcd"
+    },
+    {
+      "source": "packages/source2-model/src/kv3/values.rs",
+      "destination": "vendor/source2-model/src/kv3/values.rs",
+      "sha256": "42d6b0487dfefeee55d76bc6ad2c6eb03a42501871a343941d002143c62679e8"
+    },
+    {
+      "source": "packages/source2-model/src/lib.rs",
+      "destination": "vendor/source2-model/src/lib.rs",
+      "sha256": "c254022df16847e3babc2113c43d515426a5eba50a327388ecb553c5858a4596"
+    },
+    {
+      "source": "packages/source2-model/src/material_preview.rs",
+      "destination": "vendor/source2-model/src/material_preview.rs",
+      "sha256": "29620c150b1d48480b4b872e60f74bee2fc736a2d0de65e79d285f95ce22aee7"
+    },
+    {
+      "source": "packages/source2-model/src/nm_anim.rs",
+      "destination": "vendor/source2-model/src/nm_anim.rs",
+      "sha256": "2f3e33ddde6aa6231c6a683f2e61a02eb844dd3b893f557b7592bee7a767b45a"
+    },
+    {
+      "source": "packages/source2-model/src/nm_anim/parse.rs",
+      "destination": "vendor/source2-model/src/nm_anim/parse.rs",
+      "sha256": "3052c503afd40b680fe48f3f434e6af4186925a9e6933764c8fe58fc0e5c78c2"
+    },
+    {
+      "source": "packages/source2-model/src/nm_anim/retarget.rs",
+      "destination": "vendor/source2-model/src/nm_anim/retarget.rs",
+      "sha256": "9f9e5b0f100d4582a7b95feace73de3fc36c273595d82e4aa45b88cdcca80d7c"
+    },
+    {
+      "source": "packages/source2-model/src/nm_anim/sample.rs",
+      "destination": "vendor/source2-model/src/nm_anim/sample.rs",
+      "sha256": "4235724bff8b57899290126dc7f9702f7d8d369eefa34a4864d739d99f64b246"
+    },
+    {
+      "source": "packages/source2-model/src/nm_anim/sequence.rs",
+      "destination": "vendor/source2-model/src/nm_anim/sequence.rs",
+      "sha256": "43b1afdd85096e5e0cc00904737096a2debcd0ef981da76972dbcd288a932c13"
+    },
+    {
+      "source": "packages/source2-model/src/nm_anim/types.rs",
+      "destination": "vendor/source2-model/src/nm_anim/types.rs",
+      "sha256": "6bbdbb15ca63af0894257595a59d919f20f8296efef6563270cb1e04ae95abc8"
+    },
+    {
+      "source": "packages/source2-model/src/resource.rs",
+      "destination": "vendor/source2-model/src/resource.rs",
+      "sha256": "51b3b89313b29e5282a666da1683c889dd909a37f0aa9f5b4690be755907bf68"
+    },
+    {
+      "source": "packages/source2-model/src/skeleton.rs",
+      "destination": "vendor/source2-model/src/skeleton.rs",
+      "sha256": "bbd8c916b4c19e67a871d85abf6c884f3c26f225671751a7d3273aaab4077061"
+    },
+    {
+      "source": "packages/source2-model/src/vmesh.rs",
+      "destination": "vendor/source2-model/src/vmesh.rs",
+      "sha256": "72354f9dc2f399b41fc01131f6ed2701c3019d0fa6a0caf565761761f6a7181b"
+    },
+    {
+      "source": "packages/source2-model/src/vmesh/binary.rs",
+      "destination": "vendor/source2-model/src/vmesh/binary.rs",
+      "sha256": "9edabd8ab439167c9be4e976962f64db5c8a8195d78703edcf7be78d536244a1"
+    },
+    {
+      "source": "packages/source2-model/src/vmesh/binary_tests.rs",
+      "destination": "vendor/source2-model/src/vmesh/binary_tests.rs",
+      "sha256": "51ece9f8ca2d450d74714370c32a7b140c18e1f6391b2fd734eec37096fca141"
+    },
+    {
+      "source": "packages/source2-model/src/vmesh/decode.rs",
+      "destination": "vendor/source2-model/src/vmesh/decode.rs",
+      "sha256": "6eb8efcf9424ef955ed27261f2b8cdd337f3cff801c9305eced0932ee06b0610"
+    },
+    {
+      "source": "packages/source2-model/src/vmesh/glb.rs",
+      "destination": "vendor/source2-model/src/vmesh/glb.rs",
+      "sha256": "722d3c0a140d5dcccb2eaca06c2fad253be22acd9dcde85f1aabe173a481fb26"
+    },
+    {
+      "source": "packages/source2-model/src/vmesh/meshdata.rs",
+      "destination": "vendor/source2-model/src/vmesh/meshdata.rs",
+      "sha256": "cae9c787b909c9281917d277804f220a1dd93c94a901308ef2bdf04470da1b40"
+    },
+    {
+      "source": "packages/source2-model/src/vmesh/pose_glb.rs",
+      "destination": "vendor/source2-model/src/vmesh/pose_glb.rs",
+      "sha256": "281e87a09fa568dd4985e6b6b271bb046ee1d0a861886124a10399fcf6f41b43"
+    },
+    {
+      "source": "packages/source2-model/src/vmesh/types.rs",
+      "destination": "vendor/source2-model/src/vmesh/types.rs",
+      "sha256": "7407e5fdf094225a2890b3bbea14ab533c5d7683f85f2e76ea9d89029ace88e0"
+    },
+    {
+      "source": "packages/source2-model/src/vpk_extract.rs",
+      "destination": "vendor/source2-model/src/vpk_extract.rs",
+      "sha256": "c891d01aa3fa8b268c0779184e5a8c92d2a00687b679ee51d47b7682dc9d7c60"
+    },
+    {
+      "source": "packages/source2-model/src/vtex.rs",
+      "destination": "vendor/source2-model/src/vtex.rs",
+      "sha256": "4ba73f90cb98ff5228caa09401db24cffca8262bead56fda75549929a9c08633"
+    },
+    {
+      "source": "packages/vpk-parser/Cargo.toml",
+      "destination": "vendor/vpk-parser/Cargo.toml",
+      "sha256": "d04ab85aa53317f6aad867a1c0fa3208b624c3525d7d3071fae9934186a4027e"
+    },
+    {
+      "source": "packages/vpk-parser/src-rs/error.rs",
+      "destination": "vendor/vpk-parser/src-rs/error.rs",
+      "sha256": "7cc239ce6efc43ea438ec9a5742913a6bb6da4234e80c708a2f21d169132aff7"
+    },
+    {
+      "source": "packages/vpk-parser/src-rs/lib.rs",
+      "destination": "vendor/vpk-parser/src-rs/lib.rs",
+      "sha256": "943de11dd9b25ab1e59aba5edd9c1d9cff5dbd3f70962eefc83b333f9fdde3d6"
+    },
+    {
+      "source": "packages/vpk-parser/src-rs/parser.rs",
+      "destination": "vendor/vpk-parser/src-rs/parser.rs",
+      "sha256": "c127b08522672f7dae01fd549b0081cba8b6171b473e73f11dcf96d30211e0ac"
+    },
+    {
+      "source": "packages/vpk-parser/src-rs/types.rs",
+      "destination": "vendor/vpk-parser/src-rs/types.rs",
+      "sha256": "f9d4628c7c3da410d0f40e5a9787116c7b9503e2ce4880e1c96c95d6ba0ea98f"
+    },
+    {
+      "source": "packages/vpkmanager/Cargo.toml",
+      "destination": "vendor/vpkmanager/Cargo.toml",
+      "sha256": "7a4c5a640b40fcfe57f8fe722853ed6a3cfcd1aefa72dd590f854cc57cc637ef"
+    },
+    {
+      "source": "packages/vpkmanager/LICENSE-ValveResourceFormat",
+      "destination": "vendor/vpkmanager/LICENSE-ValveResourceFormat",
+      "sha256": "acbc4ec49464b1c9779fcf1eada093eca712a8759a266e3c5e75806e9095d18c"
+    },
+    {
+      "source": "packages/vpkmanager/LICENSE-vpkmerge",
+      "destination": "vendor/vpkmanager/LICENSE-vpkmerge",
+      "sha256": "00b2f40961e16423ce60d95c9087bde5bc5a2ed7d078312a56c54f0452863d19"
+    },
+    {
+      "source": "packages/vpkmanager/src/audio.rs",
+      "destination": "vendor/vpkmanager/src/audio.rs",
+      "sha256": "c48497070487d39053df9ce05d59ae5b4ea72447b97e513ba6fd33b6593bb0d7"
+    },
+    {
+      "source": "packages/vpkmanager/src/error.rs",
+      "destination": "vendor/vpkmanager/src/error.rs",
+      "sha256": "d46c1de994d33cb54b56fe52d32ac0cb3758fd9ab720515a80b2cdb654859551"
+    },
+    {
+      "source": "packages/vpkmanager/src/lib.rs",
+      "destination": "vendor/vpkmanager/src/lib.rs",
+      "sha256": "815e6848110d0374cbc0fc08254b4282678cbc52907576014869c28ab58afbf6"
+    },
+    {
+      "source": "packages/vpkmanager/src/pack.rs",
+      "destination": "vendor/vpkmanager/src/pack.rs",
+      "sha256": "160230355eff2065d6ddf63d1b3b7d7e755ca2add2b84fb3fd67522d5f89ae1b"
+    },
+    {
+      "source": "packages/vpkmanager/src/particle_edit.rs",
+      "destination": "vendor/vpkmanager/src/particle_edit.rs",
+      "sha256": "a9620328773aa3abc6b53fae6851cbd7e1eb48b9a202bd95b578a23195c586c0"
+    },
+    {
+      "source": "packages/vpkmanager/src/pattern.rs",
+      "destination": "vendor/vpkmanager/src/pattern.rs",
+      "sha256": "4c677a02a7f2d75e4d801ae542d904fce8d5eb4fcc01cb74ff88198fc8cfe04e"
+    },
+    {
+      "source": "packages/vpkmanager/src/sound_edit.rs",
+      "destination": "vendor/vpkmanager/src/sound_edit.rs",
+      "sha256": "4aa3d3a6414947bf4b424d30a8c1a84eb1962ac14fc8a29707e08c290f86864d"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/edit.rs",
+      "destination": "vendor/vpkmanager/src/source2/edit.rs",
+      "sha256": "37ef16109a54c0f712ee49d33fc2a9793e1ad1801fa5c32914b23db957f4f072"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/error.rs",
+      "destination": "vendor/vpkmanager/src/source2/error.rs",
+      "sha256": "7d813b78bec1c763a0ddecd2164fcd4a7ddb86c4d8d85399395cdbc93ea302c3"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/kv3/mod.rs",
+      "destination": "vendor/vpkmanager/src/source2/kv3/mod.rs",
+      "sha256": "b181bbe3bf6eb74ab424c84d82e2b385ad7b7b01a4467b6b21d3c11a8f528170"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/kv3/patch.rs",
+      "destination": "vendor/vpkmanager/src/source2/kv3/patch.rs",
+      "sha256": "0a1a7d752cad4c761930345e1a6b6f37e6faa68602ebf9f304f720bf78361dc5"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/kv3/reader.rs",
+      "destination": "vendor/vpkmanager/src/source2/kv3/reader.rs",
+      "sha256": "73a46d9d57e19a28f52978f1c695c30ceb156bfe78fe42b49ca5019f15715078"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/kv3/rewrap.rs",
+      "destination": "vendor/vpkmanager/src/source2/kv3/rewrap.rs",
+      "sha256": "5e8cd5b25cdaa9d9f6649d5f0ba744e4e7248bd990b58892f708e8090e9fd4a7"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/kv3/types.rs",
+      "destination": "vendor/vpkmanager/src/source2/kv3/types.rs",
+      "sha256": "545b614fd207762f36dfbdde521fc911dd1dce19ed6bcc7b58111a9ff9c04144"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/kv3/writer.rs",
+      "destination": "vendor/vpkmanager/src/source2/kv3/writer.rs",
+      "sha256": "596b8c7a7d9c6cc3a09d63fd8f488bef88547cb749e51ee2d2077fccbd844a4b"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/mod.rs",
+      "destination": "vendor/vpkmanager/src/source2/mod.rs",
+      "sha256": "86673a11bfe2d4468a78af0479142ee2425b028f425d4e80c4ded9f75a74f623"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/resource/header.rs",
+      "destination": "vendor/vpkmanager/src/source2/resource/header.rs",
+      "sha256": "c9b652c40a6fe2cbab510634037fd4fc276c1714d4839becbddf18da58bebbbb"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/resource/mod.rs",
+      "destination": "vendor/vpkmanager/src/source2/resource/mod.rs",
+      "sha256": "b2414ee2e05b6acbbb237446b429070f76f91498bac590d02d8073258939f07f"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/sound.rs",
+      "destination": "vendor/vpkmanager/src/source2/sound.rs",
+      "sha256": "1e22e8e8cd5f50a29c5ed9c72a2642a26d3056ad9ac5bb1c28764ba930f76572"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/texture/decode/bcn.rs",
+      "destination": "vendor/vpkmanager/src/source2/texture/decode/bcn.rs",
+      "sha256": "f67b6982aacf1bd763bb181ee246deffebc25a89ca94d38c9b619d5ec4316e64"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/texture/decode/inline.rs",
+      "destination": "vendor/vpkmanager/src/source2/texture/decode/inline.rs",
+      "sha256": "83e3f7b91b8fe58970d744a43af900386496c3656a81b8b3f63fa1c8a5f01b70"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/texture/decode/mod.rs",
+      "destination": "vendor/vpkmanager/src/source2/texture/decode/mod.rs",
+      "sha256": "edfb821543570934bac30e1d3e19edcd5ae31fbc241ce0690bcc2236f401188b"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/texture/decode/rgba8.rs",
+      "destination": "vendor/vpkmanager/src/source2/texture/decode/rgba8.rs",
+      "sha256": "b8798b1ff3305a034ac70e5523d8d7bafb8b55a3554a50172680a42bbbd30bf3"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/texture/encode/bcn.rs",
+      "destination": "vendor/vpkmanager/src/source2/texture/encode/bcn.rs",
+      "sha256": "730a1bddebb5c3884bc820db50c8b7c1805a19ee7ecfb0a161994d4ebc7b9016"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/texture/encode/inline.rs",
+      "destination": "vendor/vpkmanager/src/source2/texture/encode/inline.rs",
+      "sha256": "0262814749e26c6ac2093ea840717e52249e3de1272d96817ef85018f29c05d2"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/texture/encode/mod.rs",
+      "destination": "vendor/vpkmanager/src/source2/texture/encode/mod.rs",
+      "sha256": "deb8442f872cd78bd3a4ce2ee64796f38c078518f115988356e1e636519239c8"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/texture/encode/rgba8.rs",
+      "destination": "vendor/vpkmanager/src/source2/texture/encode/rgba8.rs",
+      "sha256": "ec29a251b3d230ef2469c116841934ec00ef63a1110c4203766931253480da09"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/texture/format.rs",
+      "destination": "vendor/vpkmanager/src/source2/texture/format.rs",
+      "sha256": "05ad755f94621cfac1c3d6c90510da0ed893abd6984e68f1ae3249786c5771dc"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/texture/mod.rs",
+      "destination": "vendor/vpkmanager/src/source2/texture/mod.rs",
+      "sha256": "754bdd896ae09801aafc04fb8774066d8f30618e96e07e4f80efbdddb0b28eac"
+    },
+    {
+      "source": "packages/vpkmanager/src/source2/texture/vtex.rs",
+      "destination": "vendor/vpkmanager/src/source2/texture/vtex.rs",
+      "sha256": "cad5783fa514c8f137d58983ec240df01bda1272f2ec4aaa17ed3b63151fff03"
+    },
+    {
+      "source": "packages/vpkmanager/src/texture_edit.rs",
+      "destination": "vendor/vpkmanager/src/texture_edit.rs",
+      "sha256": "df88d69321ad74fdeb0e5e29c62ddc9fe891eb1bccd52d9b9431b52b70b17290"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+[package]
+name = "deadlock-mod-repair"
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0"
+description = "Export repaired Deadlock mod VPKs using the locally installed game"
+repository = "https://github.com/GabrielDieterly/deadlock-mod-repair"
+
+[workspace]
+members = [".", "vendor/vpkmanager", "vendor/source2-model", "vendor/vpk-parser"]
+default-members = ["."]
+resolver = "2"
+
+[dependencies]
+clap = { version = "4.6", features = ["derive"] }
+keyvalues-parser = "0.2"
+log = "0.4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+tempfile = "3.27"
+thiserror = "2"
+source2-model = { path = "vendor/source2-model" }
+vpkmanager = { path = "vendor/vpkmanager" }
+
+[profile.release]
+lto = "thin"
+strip = true

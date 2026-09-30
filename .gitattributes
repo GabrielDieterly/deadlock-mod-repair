@@ -1,0 +1,4 @@
+* text=auto eol=lf
+assets/** -text
+vendor/** -text whitespace=cr-at-eol
+src/mod_manager/** -text

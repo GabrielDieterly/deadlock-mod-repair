@@ -1,0 +1,81 @@
+name: Build and test
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-22.04
+            platform: linux-x64
+          - os: windows-latest
+            platform: windows-x64
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: dtolnay/rust-toolchain@6bed0761d98439e5a578e2877258200ad565ba87 # stable
+      - run: cargo test --locked
+      - run: cargo clippy --locked --all-targets --no-deps
+      - run: cargo build --release --locked
+      - name: Package Linux executable
+        if: runner.os == 'Linux'
+        run: |
+          mkdir -p dist/package
+          cp target/release/deadlock-mod-repair dist/package/
+          cp README.md LICENSE.md THIRD-PARTY-NOTICES.md UPSTREAM.json dist/package/
+          mkdir -p dist/package/vendor/vpkmanager dist/package/vendor/source2-model
+          cp vendor/vpkmanager/LICENSE-* dist/package/vendor/vpkmanager/
+          cp vendor/source2-model/LICENSE-* dist/package/vendor/source2-model/
+          tar -czf dist/deadlock-mod-repair-${{ matrix.platform }}.tar.gz -C dist/package .
+          cd dist
+          sha256sum *.tar.gz > deadlock-mod-repair-${{ matrix.platform }}.sha256
+      - name: Package Windows executable
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force dist/package/vendor/vpkmanager, dist/package/vendor/source2-model | Out-Null
+          Copy-Item target/release/deadlock-mod-repair.exe dist/package/
+          Copy-Item README.md, LICENSE.md, THIRD-PARTY-NOTICES.md, UPSTREAM.json dist/package/
+          Copy-Item vendor/vpkmanager/LICENSE-* dist/package/vendor/vpkmanager/
+          Copy-Item vendor/source2-model/LICENSE-* dist/package/vendor/source2-model/
+          Compress-Archive -Path dist/package/* -DestinationPath dist/deadlock-mod-repair-${{ matrix.platform }}.zip
+          $archive = Get-Item dist/deadlock-mod-repair-${{ matrix.platform }}.zip
+          $hash = (Get-FileHash $archive -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$hash  $($archive.Name)" | Set-Content dist/deadlock-mod-repair-${{ matrix.platform }}.sha256 -Encoding ascii
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: deadlock-mod-repair-${{ matrix.platform }}
+          path: |
+            dist/*.zip
+            dist/*.tar.gz
+            dist/*.sha256
+          if-no-files-found: error
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$RELEASE_TAG" dist/* --verify-tag --title "Deadlock Mod Repair $RELEASE_TAG" --notes "Export complete repaired mod VPKs using your installed Deadlock build. Includes Windows and Linux executables, repair reports, and SHA-256 checksums. Original mod files remain unchanged. Test exported mods in-game before publishing them."
